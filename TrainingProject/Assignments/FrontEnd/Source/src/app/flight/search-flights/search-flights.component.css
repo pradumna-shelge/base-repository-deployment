@@ -1,0 +1,65 @@
+.gradient-container>.card{
+  margin: 10px;
+     height: 50px;
+     width:150px;
+    font-weight: bold;
+    font-size: 10px;
+
+background-color: rgba(255, 255, 255, 0.118);
+color: white;
+border: white;
+}
+
+.gradient-container>.card:hover{
+    background-color: rgba(255, 255, 255, 0.29);
+}
+.card-text{
+    margin: 1px;
+    font-size: 10px;
+    
+}
+.card-title{
+    color: #a0d8fd;
+}
+.card-body{
+    padding: 5px;
+}
+.gradient-container {
+    background: linear-gradient(to bottom, #03264a, #021c36);
+    position: relative;
+    height: 100px;
+
+    }
+
+    .timefilter>.card{
+        margin: 10px;
+           height: 70px;
+           width: fit-content;
+          font-size: 10px;
+         text-align: center;
+         color: rgb(0, 0, 0);
+
+         background: linear-gradient(to bottom, #0e75dc51, #04538862);
+      }
+      .timefilter>.card:hover{
+color: white;
+background: linear-gradient(to bottom, #0865c1, #045388);
+
+      }
+      .filter{
+color: black;
+padding: 10px;
+      }
+
+
+      .page{
+        background-color: #cfeaf3;
+        height: 100%;
+      }
+
+      .date{
+        background-color: transparent;
+        border: transparent;
+        color: #a0d8fd;
+        font-size: 12px;
+      }

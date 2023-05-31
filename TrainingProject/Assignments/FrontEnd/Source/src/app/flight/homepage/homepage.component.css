@@ -1,0 +1,62 @@
+.form-check {
+    display: inline-block;
+  }
+
+  .form-check .form-check-input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .form-check-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  .form-check:hover .form-check-label,
+  .form-check .form-check-input:checked ~ .form-check-label {
+    background-color: #0c8cf5;
+    color: #fff;
+  }
+
+  .date-input {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .date-input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .drop:hover{
+    background-color: #0c8cf5;
+  }
+
+
+  .gradient-container {
+    background: linear-gradient(to bottom, #0360c3, #001f3f);
+    position: relative;
+    }
+
+    .search > .card:hover{
+      background: linear-gradient(to bottom, #0876ec, #034a91);
+      color: white;
+     cursor: pointer;
+    }

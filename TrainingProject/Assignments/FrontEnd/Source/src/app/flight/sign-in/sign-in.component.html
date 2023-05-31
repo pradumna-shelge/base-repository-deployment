@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row justify-content-center ">
+        <div class="col-md-5 ">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-7">
+                        <img src="https://res.cloudinary.com/drljda4ci/image/upload/v1685364969/MakeMyTrip/smiley-woman-posing-her-baggage_23-2148521314_je4ujn.avif"
+                            alt="Card Image" class="card-img-top">
+                    </div>
+                    <div class="col-md-5 border bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">Sign In</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" #email placeholder="Enter email">
+                                </div>
+
+                               <!-- <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>  -->
+                                <button type="submit" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalId"
+                                (click)="OtpSend(email.value)">Sign In</button>
+
+                                <div class="text-center mt-3">
+                                    <!-- <span>Sign In with OTP </span> -->
+                                    <!-- <a class="text-primary pointer" data-bs-toggle="modal" data-bs-target="#modalId">SignIn with OTP</a> -->
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                              
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Verification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" name="" #otp class="form-control" placeholder="Enter OTP">
+                
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" class="btn btn-primary" (click)="verifyCode(otp.value)"  data-bs-dismiss="modal">Verify</button>
+                <a class="text-primary" (click)="OtpSend(email.value)">Resend</a>
+            </div>
+        </div>
+    </div>
+</div>
+

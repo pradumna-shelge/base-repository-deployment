@@ -1,0 +1,48 @@
+.container {
+    margin-top: 50px;
+    }
+    
+    .card-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    }
+    
+    .form-control {
+    border-radius: 25px;
+    }
+    
+    .btn-primary {
+    border-radius: 25px;
+    width: 100%;
+    }
+    
+    .mt-3 {
+    margin-top: 15px;
+    }
+    
+    .text-center {
+    text-align: center;
+    }
+    
+    .text-center a {
+    text-decoration: none;
+    }
+    
+    .card {
+    border: none;
+    border-radius: 20px;
+    }
+    
+    card-img-top{border-radius:20px;width:100%;object-fit:cover;height:100%;}
+    
+    @media (max-width: 767px) {
+    .card-img-top {
+    border-radius: 20px;
+    }
+    }
+    img{
+
+        height:100%;
+        width: 100%;
+    }
