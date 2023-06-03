@@ -11,7 +11,7 @@ export class DefaultDataService {
 
 
   getAirports(){
-     let url = "https://localhost:7007/api/Cities";
+     let url = "https://localhost:7007/api/AirportSApi";
     return this.http.get<AirportModel[]>(url);
   }
   

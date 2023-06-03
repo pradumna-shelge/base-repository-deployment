@@ -33,6 +33,8 @@ LastModificationDate datetime,
 LastModificationId int REFERENCES [User](UserId)
 );
 
+
+
 -- City Table
 CREATE TABLE LocationData (
 LocationId INT PRIMARY KEY,
@@ -69,22 +71,28 @@ LastModificationId int   ,
 FOREIGN KEY (airlineId) REFERENCES Airline(airlineId)
 );
 
+
+
 --);
 CREATE TABLE Seat (
 SeatId INT PRIMARY KEY,
 [Rows] int,
 [Column] nvarchar(4),
 FlightId int REFERENCES Flight(FlightId),
-eattypeId int  REFERENCES SeatType(SeatTypeId),
-[Status]int REFERENCES StatusData(id)
+SeatTypeId int  REFERENCES SeatType(SeatTypeId),
+[Status]int REFERENCES StatusData(id),
+SeatPrice DECIMAL(10, 2),
+createdDate datetime,
+createdId int  ,
+LastModificationDate datetime,
+LastModificationId int,
 );
 
 -- SeatTypePrice Table
 CREATE TABLE SeatType (
 SeatTypeId INT PRIMARY KEY,
-SeatTypePrice DECIMAL(10, 2),
 SeatTypeName  nvarchar(50),
-primaryTypeId int REFERENCES SeatType(id)
+LocationId int REFERENCES SeatType(SeatTypeId)
 )
 
  
@@ -106,10 +114,16 @@ Booking[Status]int REFERENCES StatusData(id)
 
 );
 
+
+
 create table StatusData(
 id INT PRIMARY KEY IDENTITY(1,1),
 statusval  nvarchar(50),
-statusFor int REFERENCES StatusData(id)
+statusFor int REFERENCES StatusData(id),
+createdDate datetime,
+createdId int  ,
+LastModificationDate datetime,
+LastModificationId int ,
 )
 
 
@@ -179,8 +193,21 @@ createdId int  ,
 LastModificationDate datetime,
 LastModificationId int   ,
 FOREIGN KEY (FlightId) REFERENCES Flight(FlightId),
-statusFor int REFERENCES StatusData(id)
-
+statusFor int REFERENCES StatusData(id),
+SeatbasicPrice DECIMAL(10, 2),
 );
+
+create table Journeyschema(
+JourneyschemaId int primary key,
+windowSaet int ,
+middleSeat int,
+aisle_seat int,
+child int,
+journeyId int REFERENCES Journey(journeyId),
+CreatedDate datetime,
+CreatedId int REFERENCES [User](UserId),
+LastModificationDate datetime,
+LastModificationId int REFERENCES [User](UserId)
+)
 
 

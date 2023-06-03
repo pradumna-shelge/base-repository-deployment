@@ -11,15 +11,17 @@ public partial class StatusDatum
 
     public int? StatusFor { get; set; }
 
-    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+    public DateTime? CreatedDate { get; set; }
+
+    public int? CreatedId { get; set; }
+
+    public DateTime? LastModificationDate { get; set; }
+
+    public int? LastModificationId { get; set; }
 
     public virtual ICollection<StatusDatum> InverseStatusForNavigation { get; set; } = new List<StatusDatum>();
 
     public virtual ICollection<Journey> Journeys { get; set; } = new List<Journey>();
-
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
-
-    public virtual ICollection<Seat> Seats { get; set; } = new List<Seat>();
 
     public virtual StatusDatum? StatusForNavigation { get; set; }
 }

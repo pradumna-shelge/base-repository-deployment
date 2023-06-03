@@ -60,3 +60,9 @@
       color: white;
      cursor: pointer;
     }
+
+    .first{
+      margin-top: -4%;
+      background-color: brown;
+      width: 80%;
+    }

@@ -1,4 +1,4 @@
-﻿using backend.Models;
+﻿ using backend.Models;
 using backend.RepoPattern.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,10 +29,10 @@ namespace backend.Controllers
                        join cou in preCity on c.CountryId equals cou.LocationId
                        select new
                        {
-                           AID = a.AirportId,
-                           ACode = a.AirportCode,
+                           AirportId = a.AirportId,
+                           AirportCode = a.AirportCode,
                            City = c.LocationName,
-                           Airport = a.AirportName,
+                           AirportName = a.AirportName,
                            Country=cou.LocationName
                        };
                               

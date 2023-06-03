@@ -1,4 +1,5 @@
 ﻿using backend.Models;
+using backend.RepoPattern.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

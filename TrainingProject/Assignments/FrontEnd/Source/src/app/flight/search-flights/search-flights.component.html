@@ -1,6 +1,8 @@
+
+<h1>{{msg}}</h1>
 <div class="page ">
     <div class=" d-flex  justify-content-center  gradient-container   shadow">
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
                 <p class="card-text">TRIP TYPE</p>
                 <p class="card-title">{{TripType}}</p>
@@ -24,168 +26,183 @@
 
 
             </div>
-        </div>
-        <div class="card">
-            <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
-                <p class="card-text">FROM</p>
-                <p class="card-title">{{fromData.cityName }}</p>
-
-            </div>
-            <div class="dropdown-menu">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                            <input type="text" #search class=" m-1 form-control" placeholder="From"
-                                (input)="checkAirport(search.value)">
-                        </div>
-
-                        <p>Search Result</p>
-                        <ol class="list-group ">
-                            <ng-container *ngFor="let item of searchdata;let i = index">
-                                <li class="list-group-item d-flex justify-content-between align-items-start" *ngIf="i<5"
-                                    (click)="from(item,1)">
-                                    <div class="ms-2 me-auto">
-                                        <div class="fw-bold">{{item.cityName}}</div>
-
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">{{item.airportCode}}</span>
-                                </li>
-                            </ng-container>
-                        </ol>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
-                <p class="card-text">TO</p>
-                <p class="card-title">{{ToData.cityName }}</p>
-
-            </div>
-            <div class="dropdown-menu">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                            <input type="text" #search1 class=" m-1 form-control" placeholder="From"
-                                (input)="checkAirport(search1.value)">
-                        </div>
-
-                        <p>Search Result</p>
-                        <ol class="list-group ">
-                            <ng-container *ngFor="let item of searchdata;let i = index">
-                                <li class="list-group-item d-flex justify-content-between align-items-start" *ngIf="i<5"
-                                    (click)="from(item,2)">
-                                    <div class="ms-2 me-auto">
-                                        <div class="fw-bold">{{item.cityName}}</div>
-
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">{{item.airportCode}}</span>
-                                </li>
-                            </ng-container>
-                        </ol>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body" data-bs-toggle="dropdown1" aria-expanded="false">
-                <p class="card-text">DEPARTURE DATE & TIME</p>
-                <span class="card-title d-flex justify-content-evenly">
-                    <input type="datetime-local" class=" m-1 date" placeholder="TO">
-                </span>
-            </div>
-            <div class="dropdown-menu">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                            <input type="date" class=" m-1 form-control" placeholder="TO">
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="card">
-            <div class="card-body" data-bs-toggle="dropdown1" aria-expanded="false">
-                <p class="card-text">RETURN DATE & TIME</p>
-                <span class="card-title d-flex justify-content-evenly">
-                    <input type="datetime-local" class=" m-1 date" placeholder="TO">
-
-                </span>
-
-            </div>
-            <div class="dropdown-menu">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
         </div> -->
 
-        <div class="card">
-            <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
-                <p class="card-text">PASSENGERS</p>
-                <div class="card-title d-flex justify-content-evenly">
-                    <p> {{seatNumbers}}</p>
-                </div>
+            <div class="card col-3">
+                <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p class="card-text">FROM</p>
+                    <h4 class="card-title">{{this.form.city }}</h4>
+                    <p>{{this.form.airportCode+","+this.form.airportName.substr(0,10)+"..."}}</p>
 
+                </div>
+                <div class="dropdown-menu">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                                <input type="text" #search class=" m-1 form-control" placeholder="From"
+                                    (input)="checkAirport(search.value)">
+                            </div>
+
+                            <p>Search Result</p>
+                            <ol class="list-group ">
+                                <ng-container *ngFor="let item of filterAirport;let i = index">
+                                    <li class="list-group-item d-flex justify-content-between align-items-start"
+                                        *ngIf="i<5" (click)="from(item,1)">
+                                        <div class="ms-2 me-auto">
+                                            <div class="fw-bold">{{item.city}}</div>
+
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">{{item.airportCode}}</span>
+                                    </li>
+                                </ng-container>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="dropdown-menu p-3 ">
-                <div class="">
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3"><label for="seatTypeSelect" class="form-label">Select Seat
-                                    Type</label><select class="form-select" #seatTypeSelect>
-                                    <option value="economy">Economy Class</option>
-                                    <option value="business">Business Class</option>
-                                    <option value="first">First Class</option>
-                                </select></div>
+            <div class="card col-3">
+                <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p class="card-text">TO</p>
+                    <h4>{{this.to.city}}</h4>
+                    <p>
+                        {{this.to.airportCode+","+this.to.airportName.substr(0,20)+"..."}}
+                    </p>
+
+                </div>
+                <div class="dropdown-menu">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                                <input type="text" #search1 class=" m-1 form-control" placeholder="From"
+                                    (input)="checkAirport(search1.value)">
+                            </div>
+
+                            <p>Search Result</p>
+                            <ol class="list-group ">
+                                <ng-container *ngFor="let item of filterAirport;let i = index">
+                                    <li class="list-group-item d-flex justify-content-between align-items-start"
+                                        *ngIf="i<5" (click)="from(item,2)">
+                                        <div class="ms-2 me-auto">
+                                            <div class="fw-bold">{{item.city}}</div>
+
+                                        </div>
+                                        <span class="badge bg-primary rounded-pill">{{item.airportCode}}</span>
+                                    </li>
+                                </ng-container>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body" data-bs-toggle="dropdown1" aria-expanded="false">
+                    <p class="card-text">DEPARTURE DATE & TIME</p>
+                    <span class="card-title d-flex justify-content-evenly">
+                        <input type="date" class=" m-1 date" placeholder="TO"  #dep >                        </span>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                               
+                            </div>
+
+
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3"><label class="form-label">Number of Passengers</label>
-                                <div class="btn-group" role="group" aria-label="Passenger Numbers"><button type="button"
-                                        class="btn btn-outline-primary" *ngFor="let item of num" 
-                                        (click)="SeatType(seatTypeSelect.value,item)">{{item}}</button>
-                                       
-                                </div>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body" data-bs-toggle="dropdown1" aria-expanded="false">
+                    <p class="card-text">RETURN DATE & TIME</p>
+                    <span class="card-title d-flex justify-content-evenly">
+                        <input type="date" class=" m-1 date" placeholder="TO" [disabled]="this.traveltype == 0" #res>
+
+                    </span>
+
+                </div>
+              
+            </div>
+
+            <div class="card col-2">
+                <div class="card-body" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p class="card-text">PASSENGERS</p>
+                    <div class="card-title d-flex justify-content-evenly">
+                        <h4> {{seatNumbers}}</h4>
+                          <p>{{this.seatTypes}}</p>
+                    </div>
+
+                </div>
+                <div class="dropdown-menu p-3 ">
+                    <div class="">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3"><label for="seatTypeSelect" class="form-label">CHOOSE TRAVEL CLASS</label><select #type class="form-select" #seatTypeSelect>
+                                        <option value="Economy">Economy Class</option>
+                                        <option value="Business">Business Class</option>
+                                        <option value="firstClass">First Class</option>
+                                    </select></div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="seatTypeSelect" class="form-label">ADULTS (12y +)</label><select #ad class="form-select" >
+                                    <option [value]="item" *ngFor="let item of num">{{item+1}}</option>
+                                    
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="seatTypeSelect" class="form-label">CHILDREN (2y - 12y)</label><select #b class="form-select" >
+                                    <option [value]="item" *ngFor="let item of num">{{item}}</option>
+                                    
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="seatTypeSelect" class="form-label">INFANTS (below 2y)</label><select #c class="form-select" >
+                                    <option [value]="item" *ngFor="let item of num">{{item}}</option>
+                                    
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary rounded" (click)="SeatType(type.value,ad.value,b.value,c.value)">Apply</button>
+                            </div>
+
+
+                        </div>
                     </div>
-                    
                 </div>
+
             </div>
 
-
-        </div>
     </div>
     <div class="row filter">
         <div class="col-sm-5 col-md-3 bg-white">

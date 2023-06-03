@@ -20,6 +20,4 @@ public partial class Flight
     public virtual Airline? Airline { get; set; }
 
     public virtual ICollection<Journey> Journeys { get; set; } = new List<Journey>();
-
-    public virtual ICollection<Seat> Seats { get; set; } = new List<Seat>();
 }

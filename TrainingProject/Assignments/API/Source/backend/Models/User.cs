@@ -29,6 +29,10 @@ public partial class User
 
     public int? RoleId { get; set; }
 
+    public virtual ICollection<Airline> AirlineCreateds { get; set; } = new List<Airline>();
+
+    public virtual ICollection<Airline> AirlineLastModifications { get; set; } = new List<Airline>();
+
     public virtual ICollection<AirportDatum> AirportDatumCreateds { get; set; } = new List<AirportDatum>();
 
     public virtual ICollection<AirportDatum> AirportDatumLastModifications { get; set; } = new List<AirportDatum>();

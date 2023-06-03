@@ -9,7 +9,7 @@ import { ProfileComponent } from './User/profile/profile.component';
 import { TripsComponent } from './User/trips/trips.component';
 
 const routes: Routes = [
-  { path: 'flight', component: NavbarComponent,
+  { path: '', component: NavbarComponent,
 children:[
   { path: 'home', component: HomepageComponent },
   { path: 'loginPage', component: SignInComponent },
@@ -22,7 +22,7 @@ children:[
   ] },
   
 ] },
-{ path: '', pathMatch: 'full', redirectTo: 'flight/searchflight' },
+{ path: '', pathMatch: 'full', redirectTo: '/searchflight' },
 ];
 
 @NgModule({

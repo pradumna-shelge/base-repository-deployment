@@ -43,3 +43,81 @@ VALUES
 (8, 'Pune International Airport', 'PNQ', 8, GETDATE(), 1, GETDATE(), 1),
 (9, 'Jaipur International Airport', 'JAI', 9, GETDATE(), 1, GETDATE(), 1),
 (10, 'Chaudhary Charan Singh International Airport', 'LKO', 10, GETDATE(), 1, GETDATE(), 1)
+
+
+
+
+----------inserting airoplane data---------
+
+INSERT INTO Airline 
+VALUES
+    ('Air India', GETDATE(), 1, GETDATE(), 1 ),
+
+    ('IndiGo', GETDATE(), 1, GETDATE(), 1 ),
+
+    ('SpiceJet', GETDATE(), 1, GETDATE(), 1 ),
+
+    ('GoAir', GETDATE(), 1, GETDATE(), 1 ),
+
+    ('Vistara', GETDATE(), 1, GETDATE(), 1 ),
+
+    ('AirAsia India', GETDATE(), 1, GETDATE(), 1 );
+
+
+
+--------------------flight
+INSERT INTO Flight (AirlineId, CreatedDate, CreatedId, LastModificationDate, LastModificationId)
+VALUES
+(1, GETDATE(), 1, GETDATE(), 1), -- Air India
+(2, GETDATE(), 1, GETDATE(), 1), -- IndiGo
+(3, GETDATE(), 1, GETDATE(), 1), -- SpiceJet
+(4, GETDATE(), 1, GETDATE(), 1), -- GoAir
+(5, GETDATE(), 1, GETDATE(), 1), -- Vistara
+(6, GETDATE(), 1, GETDATE(), 1); -- AirAsia 
+
+
+------------------seats
+INSERT INTO SeatType 
+VALUES
+(1, 'Economy', NULL),
+(2, 'Business', NULL),
+(3, 'First Class', NULL),
+(4, 'Window Seat', 1),
+(5, 'Aisle Seat', 1),
+(6, 'Bulkhead Seat', 2),
+(7, 'Exit Row Seat', 2),
+-- Additional sample data
+(8, 'Premium Economy', NULL),
+(9, 'Middle Seat', 1),
+(10, 'Extra Legroom Seat', 2);
+
+-----------------------------jountry
+
+
+INSERT INTO Journey 
+VALUES
+
+    (1, 1, '2023-06-01 10:00:00', '2023-06-01 12:00:00', 1, 2, GETDATE(), 1, GETDATE(), 1, 2, 20000.00),
+
+    (2, 2, '2023-06-02 15:00:00', '2023-06-02 17:00:00', 3, 4, GETDATE(), 2, GETDATE(), 2, 2, 25000.00),
+
+    (3, 1, '2023-06-03 08:00:00', '2023-06-03 10:00:00', 2, 1, GETDATE(), 1, GETDATE(), 1, 2, 18000.00),
+
+    (4, 3, '2023-06-04 13:30:00', '2023-06-04 15:30:00', 2, 3, GETDATE(), 3, GETDATE(), 3, 2, 2200.00);
+
+
+
+
+	-----------------status
+
+
+	INSERT INTO StatusData 
+VALUES
+('Journey',null, GETDATE(), 1, GETDATE(), 1),
+('Scheduled',1, GETDATE(), 1, GETDATE(), 1),
+('On-time',1, GETDATE(), 1, GETDATE(), 1),
+('Delayed', 1,GETDATE(), 1, GETDATE(), 1),
+('Boarding',1, GETDATE(), 1, GETDATE(), 1),
+('In-flight',1, GETDATE(), 1, GETDATE(), 1),
+('Arrived',1, GETDATE(), 1, GETDATE(), 1),
+('Cancelled',1, GETDATE(), 1, GETDATE(), 1);

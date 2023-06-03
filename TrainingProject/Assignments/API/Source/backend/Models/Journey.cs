@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 
 namespace backend.Models;
@@ -9,9 +9,9 @@ public partial class Journey
 
     public int? FlightId { get; set; }
 
-    public DateTime? ArrivalTime { get; set; }
+    public DateTime? Arrivaltime { get; set; }
 
-    public DateTime? DepartureTime { get; set; }
+    public DateTime? Departuretime { get; set; }
 
     public int? DestinationId { get; set; }
 
@@ -27,7 +27,7 @@ public partial class Journey
 
     public int? StatusFor { get; set; }
 
-    public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+    public decimal? SeatbasicPrice { get; set; }
 
     public virtual AirportDatum? Destination { get; set; }
 

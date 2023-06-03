@@ -25,5 +25,9 @@ public partial class AirportDatum
 
     public virtual User? Created { get; set; }
 
+    public virtual ICollection<Journey> JourneyDestinations { get; set; } = new List<Journey>();
+
+    public virtual ICollection<Journey> JourneySources { get; set; } = new List<Journey>();
+
     public virtual User? LastModification { get; set; }
 }

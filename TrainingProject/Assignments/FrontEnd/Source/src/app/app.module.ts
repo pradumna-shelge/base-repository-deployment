@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { NavbarComponent } from './default/navbar/navbar.component';
+import { HomepageComponent } from './default/homepage/homepage.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
