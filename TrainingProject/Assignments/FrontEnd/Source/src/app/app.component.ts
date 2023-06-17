@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { LoaderService } from './loader/loader.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FrontEnd';
+  constructor(private loader:LoaderService,private router : Router){
 
-  constructor(private http:HttpClient){
-    this.http.get('https://localhost:7276/api/Customers').subscribe(
-      {
-        next:data=>{
-          console.log(data);
-          
-        }
-      }
-    )
+this.navigate();
+
   }
+get Flag(){
+return this.loader.flag;
+}
+
+
+
+navigate(){
+  this.loader.setFlags(true);
+  setTimeout(() => {this.loader.setFlags(false); this.router.navigate(['/user'] );},3000)
+ 
+}
+
 }

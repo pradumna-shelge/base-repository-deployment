@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DefaultDataService } from './default-data.service';
+import { LoaderService } from './loader.service';
 
-describe('DefaultDataService', () => {
-  let service: DefaultDataService;
+describe('LoaderService', () => {
+  let service: LoaderService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DefaultDataService);
+    service = TestBed.inject(LoaderService);
   });
 
   it('should be created', () => {
